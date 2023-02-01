@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>第二章 - 让我们一起重写 coreutils</title>
+        <title>前言 - 让我们一起重写 coreutils</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="前言.html">前言</a></li><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> 第一章</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.1.</strong> 小节</a></li></ol></li><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">2.</strong> 第二章</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">前言</a></li><li class="chapter-item expanded "><a href="附录.html"><strong aria-hidden="true">1.</strong> 第一章</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="附录.html"><strong aria-hidden="true">1.1.</strong> 小节</a></li></ol></li><li class="chapter-item expanded "><a href="附录.html"><strong aria-hidden="true">2.</strong> 第二章</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,43 +141,61 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="write-your-own-coreutils"><a class="header" href="#write-your-own-coreutils">write-your-own-coreutils</a></h1>
-<p>https://github.com/dibingfa/dibingfa-coreutils</p>
-<h2 id="yes"><a class="header" href="#yes">yes</a></h2>
-<ul>
-<li>getoptlong</li>
-<li>putc fputc puts putchar printf</li>
-<li>include</li>
-<li>stdXXX.h</li>
-</ul>
-<h2 id="echo"><a class="header" href="#echo">echo</a></h2>
-<ul>
-<li>define</li>
-<li>国际化 setlocale bindtextdomain textdomain</li>
-<li>exit atexit</li>
-<li>makefile 基础</li>
-<li>makefile 通配符</li>
-<li>makefile 高端</li>
-<li>automake</li>
-</ul>
-<h2 id="cat"><a class="header" href="#cat">cat</a></h2>
-<ul>
-<li>fcntl</li>
-<li>malloc</li>
-<li>size_t</li>
-<li>static 等变量内存布局</li>
-<li>read write linenumber</li>
-</ul>
+                        <h1 id="前言"><a class="header" href="#前言">前言</a></h1>
+<p>This chapter gives an introduction on how to interact with a book produced by mdBook. This assumes you are reading an HTML book. The options and formatting will be different for other output formats such as PDF.</p>
+<p>A book is organized into chapters. Each chapter is a separate page. Chapters can be nested into a hierarchy of sub-chapters. Typically, each chapter will be organized into a series of headings to subdivide a chapter.</p>
+<h2 id="困惑"><a class="header" href="#困惑">困惑</a></h2>
+<p>你好，我是闪客。不知道你是否有过以下这些困惑？</p>
+<ol>
+<li>每次看 C 语言的基础知识都感觉没有太多东西，但实际用起来的时候却连一个简单的小程序都写不出来。</li>
+<li>操作系统到底为我们提供了哪些能力？&quot;深入&quot;研究了半天内核源码却还是对这个问题没有直观的感受。</li>
+<li>我们常用的 shell 命令的底层原理是什么？哦不对，我可能连怎么使用它都不知道。哦也不对，我可能连常用的 shell 命令有什么还认不全。</li>
+<li>如何编写一个自己的 CLI 小工具？让我一行一行写，一个一个参数解析我可能也会，但业界通常的最佳实践是怎么玩的？</li>
+<li>系统调用、库函数是什么？字符串解析、国际化、指针、性能优化怎么玩？这些琐碎的知识点，一个个看看不懂，看懂了也记不住，记住了也没法举一反三，总感觉自己好像学会了但这些琐碎的东西又一问三不知。</li>
+</ol>
+<p>我相信这是很多程序员的困惑，尤其是不从事 C 语言或内核相关开发工作的 Java 程序员。</p>
+<p>这个问题也困扰着我。</p>
+<p>一方面，我没有大量的时间去系统研究这一大坨的细节，同时也担心花费过多时间研究某一块的知识，把其他地方的知识丢弃掉了。</p>
+<p>另一方面，我找不到一个合适的突破口，就像上面的第一个问题一样，看了好久的 C 语言语法和原理，也看了很多内核源码的解析，却连一个简单的小程序都很难不出问题地写出来。</p>
+<h2 id="总结"><a class="header" href="#总结">总结</a></h2>
+<p>总结起来，我认为是以下几个原因所导致的：</p>
+<ol>
+<li>没有时间：互联网公司的卷，加上现在快节奏的生活，人们很少有时间专注做一件事了。</li>
+<li>缺乏练习：除非是从事 C 语言或底层相关的开发工作，大部分人都缺少实践项目，想想看自己除了 hello world 之外还编译过哪些自己写的程序？</li>
+<li>缺少动力：学了一大堆知识后，没有发挥的余地，也就没有办法更好地吸收知识，在复习旧知识和学习新知识的时候就很难提起兴趣。</li>
+<li>不成体系：学习各个知识点都是点状的，学了 C 语言语法无法对操作系统有什么认识，学了操作系统原理也无法让我使用 shell 命令更娴熟，等等。</li>
+</ol>
+<p>难道就没有办法解决这些问题了么？</p>
+<p>有！就是自己实现一套个性版的 coreutils 工具类！</p>
+<p>没听说过 coreutils？没关系，它其实就是 fileutils、shellutils 和 textutils 的合并版。</p>
+<p>这些也都没听说过？没关系，那你一定知道下面这些常用的 shell 命令吧：</p>
+<p>cat tail wc ls cp mv rm mkdir chown chmod touch echo nohup kill ...</p>
+<p>没错，这些都出自于 coreutils 项目！</p>
+<p>学习它，并且亲自造轮子实现它，并且为它增加一些自己独特的功能，会是一件非常有趣的事情。</p>
+<p>同时，这个过程可以让你一举多得，解决我之前描述的全部困惑！</p>
+<ol>
+<li>阅读这个项目的源码，最起码可以让你熟练掌握常用的 Linux 命令，同时还能了解到其中的原理，做到这点至少已经不亏了。</li>
+<li>自己实现它，可以让你通过实践的方式，掌握 C 语言在经典项目里的最佳实践，而不仅仅停留在理论层面。</li>
+<li>这里的很多代码都是使用了操作系统提供的功能，或 GLIBC 提供的库函数，你会更加直观地了解到操作系统和库函数到底为我们提供了什么，并且还能熟练使用他们。</li>
+<li>coreutils 里面就是一个一个的独立的小程序，有简单的有复杂的，可以逐个击破，成就感和知识点会非常平滑地逐步积累，很舒服。</li>
+<li>coreutils 里面的每个小程序都是一个经典的 CLI 小工具，你会掌握一个业界经典 CLI 工具的实现方式，为自己实现 CLI 工具打下良好的基础。</li>
+<li>拥有一款属于自己的开源项目！</li>
+</ol>
+<p>如果从十分功利的角度看，你也至少能获得五大块的编程领域的核心底层知识：</p>
+<ol>
+<li>Linux 常用命令的使用与原理。</li>
+<li>C 语言的语法与 Linux 系统编程的最佳实践。</li>
+<li>操作系统功能与库函数的使用。</li>
+<li>业界成熟 CLI 工具的最佳实践。</li>
+<li>GNU 项目标准体系化流程。</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="前言.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
 
-                            <a rel="next" href="index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="附录.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -187,11 +205,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="前言.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
 
-                    <a rel="next" href="index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="附录.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
